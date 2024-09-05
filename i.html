@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Analysis Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1>Audio Analysis Dashboard</h1>
+        </div>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <form id="upload-form" class="text-center">
+                    <div class="form-group">
+                        <input type="file" id="audio-file" accept="audio/*" class="form-control-file mb-3" required />
+                    </div>
+                    <button type="button" id="analyze-button" class="btn btn-primary">Analyze</button>
+                </form>
+            </div>
+        </div>
+        <div id="results" class="hidden">
+            <div class="text-center mb-4">
+                <h2>Analysis Results</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-5 mb-4 border border-primary rounded p-3">
+                    <h5>Top 5 Keywords:</h5>
+                    <p id="keywords-text" class="text-center">Loading...</p>
+                </div>
+                <div class="col-md-5 mb-4 border border-secondary rounded p-3">
+                    <h5>Top 5 Keywords Chart:</h5>
+                    <canvas id="keywords-chart" class="chart"></canvas>
+                </div>
+                <div class="col-md-5 mb-4 border border-success rounded p-3">
+                    <h5>Audio Text Summary:</h5>
+                    <p id="summary-text" class="text-center">The analysis uses Machine Learning, Gen AI, and TensorFlow to process News Data, offering insights into trends and patterns. It leverages Data Analytics for accurate, actionable information from audio inputs.</p>
+                </div>
+                <div class="col-md-5 mb-4 border border-warning rounded p-3">
+                    <h5>Sentiment Analysis Chart:</h5>
+                    <canvas id="sentiments-chart" class="chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
